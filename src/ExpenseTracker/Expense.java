@@ -1,34 +1,17 @@
-package et;
+package ExpenseTracker;
 
 public class Expense {
     private int id;
     private String date;
     private String description;
-    private double amount;
+    private int amount;
 
-    public Expense(int id, String date, String description, double amount) {
+    public Expense(int id, String date, String description, int amount) {
         this.id = id;
         this.date = date;
         this.description = description;
         this.amount = amount;
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     public int getId() {
         return id;
@@ -58,17 +41,12 @@ public class Expense {
         return amount;
     }
 
-    public void setAmount(double amount) {
+    public void setAmount(int amount) {
         this.amount = amount;
     }
 
     @Override
     public String toString() {
-        return "Expense{" +
-                "id=" + id +
-                ", date='" + date + '\'' +
-                ", description='" + description + '\'' +
-                ", amount=" + amount +
-                '}';
+        return id+"  "+date+"  "+description+"  $"+amount;
     }
 }
