@@ -1,1 +1,2 @@
-Roadmap sh project
+Roadmap project
+Terminal based expense tracker
