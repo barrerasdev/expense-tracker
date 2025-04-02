@@ -1,7 +1,7 @@
 package ExpenseTracker;
 
 public class Expense {
-    private int id;
+    private final int id;
     private String date;
     private String description;
     private int amount;
@@ -13,13 +13,6 @@ public class Expense {
         this.amount = amount;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public String getDate() {
         return date;
@@ -29,16 +22,17 @@ public class Expense {
         this.date = date;
     }
 
-    public String getDescription() {
-        return description;
-    }
 
     public void setDescription(String description) {
         this.description = description;
     }
 
-    public double getAmount() {
+    public int getAmount() {
         return amount;
+    }
+
+    public int getMonth(){
+        return Integer.parseInt(date.split("/")[0]);
     }
 
     public void setAmount(int amount) {

@@ -89,9 +89,142 @@ public class ExpenseTracker {
                     break;
                 case 3:
                     System.out.println("Summarizing Expenses:");
+                    System.out.println("Total Expenses: " + expenseList.size());
+                    System.out.println("Amount Spent: " + totalAmount(expenseList));
                     break;
                 case 4:
-                    //monthly view
+                    ArrayList<Expense>YTD = new ArrayList<Expense>();
+                    System.out.println("Choose a Month from your YTD Expenses:");
+                    for (Expense expense : expenseList) {
+                        if(expense.getDate().endsWith("2025")){
+                           YTD.add(expense);
+                        }
+                    }
+                    switch (getValidatedInt()) {
+                            case 1:
+                                ArrayList<Expense> jan = new ArrayList<Expense>();
+                                for (Expense expense : YTD) {
+                                    if (expense.getMonth() == 1) {
+                                        jan.add(expense);
+                                    }
+                                }
+                                System.out.println("Amount spent in January: " + totalAmount(jan));
+                                break;
+
+                            case 2:
+                                ArrayList<Expense> feb = new ArrayList<Expense>();
+                                for (Expense expense : YTD) {
+                                    if (expense.getMonth() == 2) {
+                                        feb.add(expense);
+                                    }
+                                }
+                                System.out.println("Amount spent in February: " + totalAmount(feb));
+                                break;
+
+                            case 3:
+                                ArrayList<Expense> mar = new ArrayList<Expense>();
+                                for (Expense expense : YTD) {
+                                    if (expense.getMonth() == 3) {
+                                        mar.add(expense);
+                                    }
+                                }
+                                System.out.println("Amount spent in March: " + totalAmount(mar));
+                                break;
+
+                            case 4:
+                                ArrayList<Expense> apr = new ArrayList<Expense>();
+                                for (Expense expense : YTD) {
+                                    if (expense.getMonth() == 4) {
+                                        apr.add(expense);
+                                    }
+                                }
+                                System.out.println("Amount spent in April: " + totalAmount(apr));
+                                break;
+
+                            case 5:
+                                ArrayList<Expense> may = new ArrayList<Expense>();
+                                for (Expense expense : YTD) {
+                                    if (expense.getMonth() == 5) {
+                                        may.add(expense);
+                                    }
+                                }
+                                System.out.println("Amount spent in May: " + totalAmount(may));
+                                break;
+
+                            case 6:
+                                ArrayList<Expense> jun = new ArrayList<Expense>();
+                                for (Expense expense : YTD) {
+                                    if (expense.getMonth() == 6) {
+                                        jun.add(expense);
+                                    }
+                                }
+                                System.out.println("Amount spent in June: " + totalAmount(jun));
+                                break;
+
+                            case 7:
+                                ArrayList<Expense> jul = new ArrayList<Expense>();
+                                for (Expense expense : YTD) {
+                                    if (expense.getMonth() == 7) {
+                                        jul.add(expense);
+                                    }
+                                }
+                                System.out.println("Amount spent in July: " + totalAmount(jul));
+                                break;
+
+                            case 8:
+                                ArrayList<Expense> aug = new ArrayList<Expense>();
+                                for (Expense expense : YTD) {
+                                    if (expense.getMonth() == 8) {
+                                        aug.add(expense);
+                                    }
+                                }
+                                System.out.println("Amount spent in August: " + totalAmount(aug));
+                                break;
+
+                            case 9:
+                                ArrayList<Expense> sep = new ArrayList<Expense>();
+                                for (Expense expense : YTD) {
+                                    if (expense.getMonth() == 9) {
+                                        sep.add(expense);
+                                    }
+                                }
+                                System.out.println("Amount spent in September: " + totalAmount(sep));
+                                break;
+
+                            case 10:
+                                ArrayList<Expense> oct = new ArrayList<Expense>();
+                                for (Expense expense : YTD) {
+                                    if (expense.getMonth() == 10) {
+                                        oct.add(expense);
+                                    }
+                                }
+                                System.out.println("Amount spent in October: " + totalAmount(oct));
+                                break;
+
+                            case 11:
+                                ArrayList<Expense> nov = new ArrayList<Expense>();
+                                for (Expense expense : YTD) {
+                                    if (expense.getMonth() == 11) {
+                                        nov.add(expense);
+                                    }
+                                }
+                                System.out.println("Amount spent in November: " + totalAmount(nov));
+                                break;
+
+                            case 12:
+                                ArrayList<Expense> dec = new ArrayList<Expense>();
+                                for (Expense expense : YTD) {
+                                    if (expense.getMonth() == 12) {
+                                        dec.add(expense);
+                                    }
+                                }
+                                System.out.println("Amount spent in December: " + totalAmount(dec));
+                                break;
+
+                            default:
+                                System.out.println("Invalid month selection.");
+                                break;
+                        }
                     break;
                 case 5:
                     System.exit(0);
@@ -118,6 +251,14 @@ public class ExpenseTracker {
         for (Expense expense : expenseList) {
             System.out.println(expense.toString());
         }
+    }
+
+    public static int totalAmount(ArrayList<Expense> total){
+        int totalAmount = 0;
+        for (Expense expense : total) {
+            totalAmount+= expense.getAmount();
+        }
+        return totalAmount;
     }
 
 }
